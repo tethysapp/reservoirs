@@ -124,7 +124,7 @@ def GetInfo(request):
     try:
         fullsitecode = request.GET.get("full_code")
         site_name = request.GET.get("site_name")
-        print(site_name)
+        # print(site_name)
         site_name_only = site_name.split(' ')[-1]
 
         wlh_json_file_path = os.path.join(app.get_app_workspace().path, 'waterLevel_hist.json')
@@ -202,9 +202,9 @@ def GetForecast(request):
     rating_curves = pd.read_excel(rating_curves_file_path)
 
     site_name = request.GET.get("site_name")
-    print(site_name)
+    # print(site_name)
     site_name_only = site_name.split(' ')[-1]
-    print(site_name_only)
+    # print(site_name_only)
     streams_json_file_path = os.path.join(app.get_app_workspace().path, 'streams.json')
     wlh_json_file_path = os.path.join(app.get_app_workspace().path, 'waterLevel_hist.json')
 
@@ -291,10 +291,10 @@ def GetForecast(request):
         # print(presa_rc_vol)
         init_elv_r = wlh_data_reservoir[site_name]['dataValue']
         lookup_iv = min(range(len(presa_rc_elev)), key=lambda i: abs(presa_rc_elev[i]-init_elv_r))
-        print(len(presa_rc_elev))
-        print(lookup_iv)
+        # print(len(presa_rc_elev))
+        # print(lookup_iv)
         init_vol_r = presa_rc_vol[lookup_iv]
-        print(init_elv_r)
+        # print(init_elv_r)
 
         return_object['max2'] = [x + (init_vol_r * 1000000)  for x in daily_vtotal_max]
         return_object['se52'] = [x + (init_vol_r * 1000000)  for x in daily_vtotal_75]
@@ -316,10 +316,10 @@ def GetForecast(request):
             lookup_75 = min(range(len(presa_rc_vol)), key=lambda i: abs(presa_rc_vol[i]-(init_vol_r + volume_75/1000000)))
             lookup_avg = min(range(len(presa_rc_vol)), key=lambda i: abs(presa_rc_vol[i]-(init_vol_r + volume_avg/1000000)))
             # print(abs(presa_rc_vol[0]-(volume_max/1000000)),lookup_max)
-            print(lookup_max, volume_max/1000000,init_vol_r,)
-            print(lookup_75, volume_75/1000000,init_vol_r)
-            print(lookup_avg, volume_avg/1000000,init_vol_r)
-            print(presa_rc_vol)
+            # print(lookup_max, volume_max/1000000,init_vol_r,)
+            # print(lookup_75, volume_75/1000000,init_vol_r)
+            # print(lookup_avg, volume_avg/1000000,init_vol_r)
+            # print(presa_rc_vol)
 
             matching_elev_max = presa_rc_elev[lookup_max]
             matching_elev_75 = presa_rc_elev[lookup_75]

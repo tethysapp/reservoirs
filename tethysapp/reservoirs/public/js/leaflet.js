@@ -16,7 +16,7 @@ function getSiteInfoTable() {
 
     success: function(result) {
       try{
-        console.log(result)
+        // console.log(result)
         var myInfo = result.siteInfo;
         const myOtherSites = [];
 
@@ -306,7 +306,7 @@ function getSiteInfo() {
       try{
         $("#error_info").addClass("hidden");
         $("#container_tabs_info").removeClass("hidden");
-        console.log(result)
+        // console.log(result)
         var storage_capacity = result.values_sc;
         var elvs = storage_capacity.map(function (i) { return i[1]})
         var vols = storage_capacity.map(function (i) { return i[0]})
@@ -536,7 +536,7 @@ function getForecast() {
 
         success: function(result) {
           try{
-            console.log(result);
+            // console.log(result);
             $('#fe-loading').addClass('hidden');
             $('#fv-loading').addClass('hidden');
 
@@ -692,7 +692,7 @@ function getForecast() {
                           }
                       },
                       autorange:true
-                      
+
                   },
                   autosize:true
               };
