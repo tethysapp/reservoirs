@@ -8,12 +8,12 @@ requirements:
   skip: false
   conda:
     channels:
+      - conda-forge
     packages:
-
+      - pywaterml
+      - xlrd
+      - geoglows
+      - scipy
   pip:
 
 post:
-
-#xlrd
-#geoglows
-#scipy

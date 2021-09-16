@@ -5,7 +5,6 @@ import os
 from tethys_sdk.workspaces import app_workspace
 import numpy as np
 import json
-import plotly as pl
 import pandas as pd
 import geoglows
 import datetime
