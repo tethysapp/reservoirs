@@ -15,6 +15,7 @@ requirements:
       - geoglows
       - scipy
       - pandas
+      - openpyxl
   pip:
 
 post:
